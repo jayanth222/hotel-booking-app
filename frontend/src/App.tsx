@@ -4,6 +4,7 @@ import Register from "./pages/Register";
 import SignIn from "./pages/Signin";
 import AddHotel from "./pages/AddHotel";
 import { useAppContext } from "./contexts/AppContext";
+import MyHotels from "./pages/MyHotels";
 
 
 const  App=()=> {
@@ -20,7 +21,7 @@ const  App=()=> {
         <Route path="/search" element={
         <Layout>
           <p>Search Page</p>
-          </Layout>} 
+        </Layout>} 
         />
         <Route path="/register" element={
         <Layout>
@@ -37,8 +38,13 @@ const  App=()=> {
               <AddHotel/>
             </Layout>
           }/>
+          <Route path="/my-hotels" element={
+            <Layout>
+              <MyHotels/>
+            </Layout>
+          }/>
         </>)}
-        <Route path="+" element={<Navigate to='/' />} />
+        <Route path="*" element={<Navigate to='/'/>} />
       </Routes>
     </BrowserRouter>
   );
