@@ -60,7 +60,8 @@ const SearchBar =()=>{
                 </label>
             </div>
             <div >
-                <DatePicker 
+                <DatePicker
+                dateFormat='dd/MM/yyyy'
                 selected={checkIn} 
                 onChange={(date)=>setcheckIn(date as Date)}
                 selectsStart
@@ -74,7 +75,8 @@ const SearchBar =()=>{
                 />
             </div>
             <div >
-                <DatePicker 
+                <DatePicker
+                dateFormat='dd/MM/yyyy'
                 selected={checkOut} 
                 onChange={(date)=>setcheckOut(date as Date)}
                 selectsStart
