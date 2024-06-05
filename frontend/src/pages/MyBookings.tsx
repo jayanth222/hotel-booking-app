@@ -29,21 +29,22 @@ const MyBookings = () => {
               </div>
             </div>
             {hotel.bookings.map((booking) => (
-            <div>
               <div>
-                <span className="font-bold mr-2">Dates:</span>
-                <span>
-                  {new Date(booking.checkIn).toDateString()} - {new Date(booking.checkOut).toDateString()}
-                </span>
+                <div>
+                  <span className="font-bold mr-2">Dates:</span>
+                  <span>
+                    {new Date(booking.checkIn).toDateString()} -{" "}
+                    {new Date(booking.checkOut).toDateString()}
+                  </span>
+                </div>
+                <div>
+                  <span className="font-bold mr-2">Guests:</span>
+                  <span>
+                    {booking.adultCount} adults, {booking.childCount} children
+                  </span>
+                </div>
               </div>
-              <div>
-                <span className="font-bold mr-2">Guests:</span>
-                <span>
-                  {booking.adultCount} adults, {booking.childCount} children
-                </span>
-              </div>
-            </div>
-          ))}
+            ))}
           </div>
         </div>
       ))}
