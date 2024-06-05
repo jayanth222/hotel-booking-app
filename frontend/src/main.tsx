@@ -1,19 +1,19 @@
-import ReactDOM from 'react-dom/client'
-import App from './App.tsx'
-import './index.css'
-import { QueryClient, QueryClientProvider } from 'react-query'
-import {AppContextProvider} from './contexts/AppContext'
-import { SearchContextProvider } from './contexts/SearchContext.tsx'
+import ReactDOM from "react-dom/client";
+import App from "./App.tsx";
+import "./index.css";
+import { QueryClient, QueryClientProvider } from "react-query";
+import { AppContextProvider } from "./contexts/AppContext";
+import { SearchContextProvider } from "./contexts/SearchContext.tsx";
 
-const queryClient =new QueryClient({
-  defaultOptions:{
-    queries:{
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
       retry: 0,
-    }
-  }
-})
+    },
+  },
+});
 
-ReactDOM.createRoot(document.getElementById('root')!).render(
+ReactDOM.createRoot(document.getElementById("root")!).render(
   <QueryClientProvider client={queryClient}>
     <AppContextProvider>
       <SearchContextProvider>
@@ -21,4 +21,4 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
       </SearchContextProvider>
     </AppContextProvider>
   </QueryClientProvider>
-)
+);
