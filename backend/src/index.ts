@@ -9,6 +9,7 @@ import userRoutes from "./routes/users";
 import authRoutes from "./routes/auth";
 import myHotelRoutes from "./routes/my-hotels";
 import hotelRoutes from "./routes/hotels";
+import myBookingsRoutes from "./routes/my-bookings";
 import path from "path";
 
 mongoose.connect(process.env.MONGODB_CONNECTION_STRING as string);
@@ -36,6 +37,7 @@ app.use("/api/auth", authRoutes);
 app.use("/api/users", userRoutes);
 app.use("/api/my-hotels", myHotelRoutes);
 app.use("/api/hotels", hotelRoutes);
+app.use("/api/my-bookings", myBookingsRoutes);
 
 app.get("*", (req: Request, res: Response) => {
   res.sendFile(path.join(__dirname, "../../frontend/dist/index.html"));
